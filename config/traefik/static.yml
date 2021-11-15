@@ -14,14 +14,7 @@ metrics:
 entryPoints:
   web:
     address: :80
-    # http:
-    #   redirections:
-    #     entryPoint:
-    #       to: websecure
-    #         permanent: true
-    #         priority: 10
-    #   middlewares:
-    #     - security-headers
+
   websecure:
     address: :443
   flower:

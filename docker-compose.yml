@@ -96,7 +96,7 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=front"
       # - "traefik.http.routers.prometheus.rule=Host(`prom.${DOMAIN}`)"
-      # - "traefik.http.routers.prometheus.rule=Host(`${SERVER_IP}`)"
+      - "traefik.http.routers.prometheus.rule=Host(`${SERVER_IP}`)"
       - "traefik.http.routers.prometheus.entrypoints=prometheus"
       # Enables tls
       # - "traefik.http.routers.flower.tls=true"
