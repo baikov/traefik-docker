@@ -4,7 +4,7 @@ api:
 
 metrics:
   prometheus:
-    # addEntryPointsLabels: true
+    addEntryPointsLabels: true
     # buckets:
     #   - 0.1
     #   - 0.3
