@@ -32,7 +32,7 @@ certificatesResolvers: # Certs handler/resolver
   letsencrypt:
     acme:
       storage: "/etc/traefik/acme/acme.json"
-      # caServer: "https://acme-staging-v02.api.letsencrypt.org/directory"
+      caServer: "https://acme-staging-v02.api.letsencrypt.org/directory"
       tlsChallenge: true
       # dnsChallenge:
       #   provider: cloudflare
