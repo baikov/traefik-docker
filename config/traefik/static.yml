@@ -26,8 +26,8 @@ entryPoints:
     address: :443
   flower:
     address: :5555
-  # prometheus:
-  #   address: :9090
+  prometheus:
+    address: :9090
 providers:
   docker:
     exposedByDefault: false
