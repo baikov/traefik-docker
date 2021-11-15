@@ -31,8 +31,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - prod_traefik:/etc/traefik/acme:z
       - ./log:/var/log/traefik
-      - ./config/static.yml:/static.yml
-      - ./config/dynamic.yml:/etc/traefik/dynamic.yml
+      - ./config/traefik/static.yml:/static.yml
+      - ./config/traefik/dynamic.yml:/etc/traefik/dynamic.yml
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=front"
