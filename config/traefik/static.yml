@@ -21,6 +21,8 @@ entryPoints:
     address: :5555
   prometheus:
     address: :9090
+  grafana:
+    address: :3000
 providers:
   docker:
     exposedByDefault: false
