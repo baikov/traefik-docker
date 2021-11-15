@@ -26,6 +26,7 @@ services:
       - "443:443"
       - "5555:5555"
       - "9090:9090"
+      - "8080:8080"
 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -48,7 +49,7 @@ services:
 
       # Secure Dashboard (http basic auth)
       # - "traefik.http.routers.dashboard.rule=Host(`${TRAEFIK_DASHBOARD}.${DOMAIN}`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
-      - "traefik.http.routers.dashboard.rule=Host(`${SERVER_IP}`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
+      # - "traefik.http.routers.dashboard.rule=Host(`${SERVER_IP}`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
       # - "traefik.http.routers.dashboard.service=api@internal"
       # - "traefik.http.routers.dashboard.tls.certresolver=letsencrypt"
       # - "traefik.http.routers.dashboard.entrypoints=websecure"
