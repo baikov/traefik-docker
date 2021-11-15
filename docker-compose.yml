@@ -126,8 +126,9 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=front"
-      - "traefik.http.routers.grafana.rule=Host(gr.`${DOMAIN}`)"
+      - "traefik.http.routers.grafana.rule=Host(`${DOMAIN}`)"
       - "traefik.http.routers.grafana.tls=true"
+      - "traefik.http.routers.grafana.entrypoints=grafana"
       # Asociation with resolver (see static.yml file)
       - "traefik.http.routers.grafana.tls.certresolver=letsencrypt"
       # add security middleware
