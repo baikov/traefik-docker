@@ -121,15 +121,12 @@ services:
       - grafana_data:/var/lib/grafana
       - ./config/grafana/provisioning/:/etc/grafana/provisioning/
     env_file:
-      - ./grafana/config.monitoring
-    networks:
-      - front
+      - ./config/grafana/config.monitoring
     user: "104"
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=front"
       - "traefik.http.routers.grafana.rule=Host(`${DOMAIN}`)"
-      - "traefik.docker.network=front"
       - "traefik.http.routers.grafana.tls=true"
       # Asociation with resolver (see static.yml file)
       - "traefik.http.routers.grafana.tls.certresolver=letsencrypt"
