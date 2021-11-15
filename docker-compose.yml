@@ -136,8 +136,10 @@ services:
       # Set default options (see dynamic.yaml for this)
       - "traefik.http.routers.grafana.tls.options=default"
       # loadbalancer
-      - "traefik.http.routers.grafana.service=grafana"
+      # - "traefik.http.routers.grafana.service=grafana"
       - "traefik.http.services.grafana.loadbalancer.server.port=3000"
+    expose:
+      - 3000
     networks:
       - front
     restart: unless-stopped
