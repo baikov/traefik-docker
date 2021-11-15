@@ -27,7 +27,7 @@ services:
       - "443:443"
       - "5555:5555"
       - "9090:9090"
-      - "8080:8080"
+      - "3000:3000"
 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -126,7 +126,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=front"
-      - "traefik.http.routers.grafana.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.grafana.rule=Host(gr.`${DOMAIN}`)"
       - "traefik.http.routers.grafana.tls=true"
       # Asociation with resolver (see static.yml file)
       - "traefik.http.routers.grafana.tls.certresolver=letsencrypt"
