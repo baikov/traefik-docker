@@ -2,7 +2,7 @@ version: '3.9'
 volumes:
   prod_traefik:
     name: prod_traefik
-   prometheus_data: {}
+  prometheus_data: {}
 
 networks:
   front:
