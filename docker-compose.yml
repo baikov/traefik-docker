@@ -97,7 +97,7 @@ services:
       - "traefik.docker.network=back-tier"
       # - "traefik.http.routers.prometheus.rule=Host(`prom.${DOMAIN}`)"
       - "traefik.http.routers.prometheus.rule=Host(`${SERVER_IP}`)"
-      - "traefik.http.routers.flower.entrypoints=prometheus"
+      - "traefik.http.routers.prometheus.entrypoints=prometheus"
       # Enables tls
       # - "traefik.http.routers.flower.tls=true"
       # Asociation with resolver (see static.yml file)
