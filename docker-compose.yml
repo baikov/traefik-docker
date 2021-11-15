@@ -39,10 +39,10 @@ services:
       - "traefik.docker.network=front"
 
       # Rules and middlewares asociation with entrypoints
-      - "traefik.http.routers.http-catchall.rule=hostregexp(`{host:.+}`)"
-      - "traefik.http.routers.http-catchall.entrypoints=web"
+      # - "traefik.http.routers.http-catchall.rule=hostregexp(`{host:.+}`)"
+      # - "traefik.http.routers.http-catchall.entrypoints=web"
       # - "traefik.http.routers.http-catchall.middlewares=redirect-to-https,security-headers"
-      - "traefik.http.routers.https-catchall.rule=hostregexp(`{host:.+}`)"
+      # - "traefik.http.routers.https-catchall.rule=hostregexp(`{host:.+}`)"
       # - "traefik.http.routers.https-catchall.entrypoints=websecure"
       # - "traefik.http.routers.https-catchall.middlewares=security-headers"
       # - "traefik.http.routers.https-catchall.middlewares=custom-redirect,security-headers"
@@ -74,7 +74,7 @@ services:
       # - "traefik.http.middlewares.security-headers.headers.stsSeconds=31536000"
       # - "traefik.http.middlewares.security-headers.headers.forceSTSHeader=true"
       # gzip compression
-      - "traefik.http.middlewares.gzip.compress=true"
+      # - "traefik.http.middlewares.gzip.compress=true"
       # Dashboard auth
       - "traefik.http.middlewares.admin.basicauth.users=${DASHBOARD_LOG_PSW}"
 
@@ -121,6 +121,5 @@ services:
       # - "traefik.http.routers.prometheus.middlewares=custom-redirect@file, security-headers"
       # - "traefik.http.routers.prometheus.tls.options=default"
     networks:
-      - back-tier
       - front
     restart: unless-stopped
