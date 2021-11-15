@@ -27,6 +27,7 @@ services:
       - "443:443"
       - "5555:5555"
       - "9090:9090"
+      - "8080:8080"
       - "3000:3000"
 
     volumes:
@@ -38,6 +39,8 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=front"
+      - "traefik.port=8080"
+      - "traefik.backend=traefik"
 
       # Rules and middlewares asociation with entrypoints
       - "traefik.http.routers.http-catchall.rule=hostregexp(`{host:.+}`)"
