@@ -39,8 +39,8 @@ services:
       - "traefik.docker.network=front"
 
       # Rules and middlewares asociation with entrypoints
-      # - "traefik.http.routers.http-catchall.rule=hostregexp(`{host:.+}`)"
-      # - "traefik.http.routers.http-catchall.entrypoints=web"
+      - "traefik.http.routers.http-catchall.rule=hostregexp(`{host:.+}`)"
+      - "traefik.http.routers.http-catchall.entrypoints=web"
       # - "traefik.http.routers.http-catchall.middlewares=redirect-to-https,security-headers"
       # - "traefik.http.routers.https-catchall.rule=hostregexp(`{host:.+}`)"
       # - "traefik.http.routers.https-catchall.entrypoints=websecure"
