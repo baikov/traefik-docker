@@ -26,7 +26,7 @@ entryPoints:
   grafana:
     address: :3000
   metrics:
-    address: ":9090"
+    address: ":9191"
 providers:
   docker:
     exposedByDefault: false
