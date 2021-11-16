@@ -3,13 +3,15 @@ api:
   dashboard: true
 
 metrics:
-  prometheus: {}
-    # addEntryPointsLabels: true
-    # buckets:
-    #   - 0.1
-    #   - 0.3
-    #   - 1.2
-    #   - 5.0
+  prometheus:
+    entryPoint: metrics
+    addEntryPointsLabels: true
+    addServicesLabels: true
+    buckets:
+      - 0.1
+      - 0.3
+      - 1.2
+      - 5.0
 
 entryPoints:
   web:
@@ -23,6 +25,8 @@ entryPoints:
     address: :9090
   grafana:
     address: :3000
+  metrics:
+    address: ":9090"
 providers:
   docker:
     exposedByDefault: false
@@ -43,7 +47,8 @@ certificatesResolvers: # Certs handler/resolver
       #     - "8.8.8.8:53"
 
 log:
-  level: DEBUG
+  filePath: "/var/log/traefik/applog.log"
+  level: INFO
 
 accessLog:
   filePath: "/var/log/traefik/access.log"
